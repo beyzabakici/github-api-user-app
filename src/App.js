@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import { HOME_SCREEN, STARED_REPOS_SCREEN } from "./constants/navigations";
-import { HomeScreen } from "./screens";
+import { HOME_SCREEN, USER_PROFILE } from "./constants/navigations";
+import { HomeScreen, UserProfile } from "./screens";
 
 const App = () => {
   return (
-    <div class="bg-gray-900">
+    <div className="bg-gray-900">
       <div className="container mx-auto px-4">
         <Navbar />
         <Routes>
-          <Route path={`${HOME_SCREEN}`} element={<HomeScreen />} />
+          <Route path={HOME_SCREEN} element={<HomeScreen />} />
+          <Route path={USER_PROFILE} element={<UserProfile />} />
         </Routes>
       </div>
     </div>

@@ -1,21 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Increment, Decrement } from "../../store/actions/counter.reducer";
-
-import "./style.css";
+import { UserCard } from "../../components";
+import useGetUserRepos from "../../hooks/useGetUserRepos";
+import useGetUsers from "../../hooks/useGetUsers";
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
-  const { counterReducer } = useSelector((state) => state);
-
-  const increment = () => dispatch(Increment());
-  const decrement = () => dispatch(Decrement());
-
+  const { mainReducer } = useSelector((state) => state);
+  const data = useGetUsers();
+  const repos = useGetUserRepos('mojombo');
+  console.log(data, mainReducer, repos)
   return (
     <div>
-      <h1>{counterReducer.val}</h1>
-
-      <button onClick={decrement}>DECREMENT</button>
-      <button onClick={increment}>INCREMENT</button>
+      <UserCard/>
     </div>
   );
 };

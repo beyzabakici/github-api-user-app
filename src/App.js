@@ -1,25 +1,24 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
 import { HOME_SCREEN, STARED_REPOS_SCREEN } from "./constants/navigations";
 import { HomeScreen, StaredReposScreen } from "./screens";
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <NavBar />
+    <div>
+      <p className="uppercase ...">The quick brown fox ...</p>
+      <p className="lowercase ...">The quick brown fox ...</p>
+      <button className="">sdds</button>
+      <NavBar />
+      <Routes>
+        <Route
+          path={`${STARED_REPOS_SCREEN}`}
+          element={<StaredReposScreen />}
+        />
 
-        <Switch>
-          <Route exact path={`${STARED_REPOS_SCREEN}`}>
-            <StaredReposScreen />
-          </Route>
-
-          <Route exact path={`${HOME_SCREEN}`}>
-            <HomeScreen />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <Route path={`${HOME_SCREEN}`} element={<HomeScreen />} />
+      </Routes>
+    </div>
   );
 };
 

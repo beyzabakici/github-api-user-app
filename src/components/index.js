@@ -1,2 +1,4 @@
-export { default as NavBar } from "./NavBar";
+export { default as Navbar } from "./Navbar";
 export { default as UserCard } from "./UserCard";
+export { default as OrganizationBadge } from "./OrganizationBadge";
+export { default as AppButton } from "./AppButton";

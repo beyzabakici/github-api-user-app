@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default (domain) => {
   const [results, setResults] = useState({
     data: [],
     loading: true,
@@ -11,7 +11,7 @@ export default () => {
 
   async function getResults() {
     await axios
-      .get(`https://api.github.com/users`)
+      .get(domain)
       .then((response) => {
         setResults({
           data: response.data,
@@ -30,5 +30,5 @@ export default () => {
     getResults();
   }, []);
 
-  return [results];
+  return results;
 };

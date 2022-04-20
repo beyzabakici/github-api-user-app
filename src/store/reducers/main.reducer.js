@@ -1,21 +1,23 @@
+import { ADD_FAVORITES, REMOVE_FAVORITES } from "../types";
+
 const INITIAL_STATE = {
-  favories: {},
-  
+  favorites: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
-  // switch (action.type) {
-  //   case :
-  //     return { ...state, val: state.val + 1 };
+  switch (action.type) {
+    case ADD_FAVORITES:
+      return {
+        favorites: [...state.favorites, action.payload],
+      };
+    case REMOVE_FAVORITES:
+      return {
+        favorites: state.favorites.filter((item) => item !== action.payload),
+      };
 
-  //   case REMOVE_FAVORIES:
-  //     return { ...state, val: state.val - 1 };
-
-  //   default:
-  //     return state;
-  // }
-
-  return state;
+    default:
+      return state;
+  }
 };
 
 export default reducer;

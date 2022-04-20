@@ -1,7 +1,5 @@
-import React from "react";
-
 export default function OrganizationBadge({ organization }) {
-  const { avatar_url, description } = organization;
+  const { avatar_url } = organization;
 
   return (
     <img

@@ -1,13 +1,15 @@
-import { ADD_FAVORIES, REMOVE_FAVORIES } from "../types";
+import { ADD_FAVORITES, REMOVE_FAVORITES } from "../types";
 
-export const AddFavories = () => {
+export const addFavorites = (item) => {
   return {
-    type: ADD_FAVORIES,
+    type: ADD_FAVORITES,
+    payload: item,
   };
 };
 
-export const RemoveFavories = () => {
+export const removeFavorites = (item) => {
   return {
-    type: REMOVE_FAVORIES,
+    type: REMOVE_FAVORITES,
+    payload: item,
   };
 };

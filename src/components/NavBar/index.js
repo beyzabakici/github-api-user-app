@@ -37,7 +37,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end z-10">
             <Link
               to={HOME_SCREEN}
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"

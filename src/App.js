@@ -5,7 +5,7 @@ import { HomeScreen, UserProfile } from "./screens";
 
 const App = () => {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 h-full w-full">
       <div className="container mx-auto px-4">
         <Navbar />
         <Routes>

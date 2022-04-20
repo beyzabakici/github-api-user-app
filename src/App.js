@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import { HOME_SCREEN, USER_PROFILE } from "./constants/navigations";
-import { HomeScreen, UserProfile } from "./screens";
+import { FAVORITES_PAGE, HOME_SCREEN, USER_PROFILE } from "./constants/navigations";
+import { FavoritesPage, HomeScreen, UserProfile } from "./screens";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
         <Routes>
           <Route path={HOME_SCREEN} element={<HomeScreen />} />
           <Route path={USER_PROFILE} element={<UserProfile />} />
+          <Route path={FAVORITES_PAGE} element={<FavoritesPage />} />
         </Routes>
       </div>
     </div>

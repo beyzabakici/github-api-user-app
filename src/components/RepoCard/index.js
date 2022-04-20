@@ -25,11 +25,11 @@ export default function RepoCard(props) {
   const onClickFavorite = () => {
     const fn = isFavorite ? removeFavorites : addFavorites;
 
-    return dispatch(fn(id));
+    return dispatch(fn(props.repo));
   };
 
   const isFavoritesItem = () => {
-    setFavorite(favorites.includes(id));
+    setFavorite(favorites.includes(props.repo));
   };
 
   return (

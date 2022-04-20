@@ -4,7 +4,7 @@ import useGetResults from "../../hooks/useGetResults";
 const HomeScreen = () => {
   const { data } = useGetResults("https://api.github.com/users");
   const renderUsers = () => {
-    return data.map((user) => <UserCard user={user} />);
+    return data.map((user) => <UserCard user={user} key={user.id}/>);
   };
   return (
     <div className="mx-auto py-4 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-8">

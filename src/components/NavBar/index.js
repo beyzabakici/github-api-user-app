@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HOME_SCREEN } from "../../constants/navigations";
+import { FAVORITES_PAGE, HOME_SCREEN } from "../../constants/navigations";
 
 export default function Navbar() {
   return (
@@ -45,7 +45,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              to={"/"}
+              to={FAVORITES_PAGE}
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"
             >
               Favorites

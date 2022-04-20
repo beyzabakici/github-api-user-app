@@ -8,7 +8,6 @@ export default function FavoriteButton({onClick, isFavoritesItem}) {
         selected={isFavoritesItem}
         width={30}
         height={30}
-        currentColor="rgba(124, 58, 237)"
       />
     </button>
   );

@@ -24,13 +24,13 @@ export default function UserProfile() {
 
   const getOrganizationBadges = () => {
     return orgs.data.map((organization) => (
-      <OrganizationBadge organization={organization} />
+      <OrganizationBadge organization={organization} key={organization.id} />
     ));
   };
 
   const getRepos = () => {
     return repos.data.map((repo) => (
-      <RepoCard repo={repo} isFavoritesItem={false} />
+      <RepoCard repo={repo} isFavoritesItem={false} key={repo.id} />
     ));
   };
   return (

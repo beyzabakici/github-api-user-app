@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { VerticalTimeline } from "react-vertical-timeline-component/dist-modules";
 import { OrganizationBadge, RepoCard } from "../../components";
 import useGetResults from "../../hooks/useGetResults";
 
@@ -176,9 +177,9 @@ export default function UserProfile() {
                   </dl>
                 </div>
               ) : (
-                <div className="flex flex-row flex-wrap justify-center mt-4 px-8 xl:px-20">
+                <VerticalTimeline className="flex flex-row flex-wrap justify-center mt-4 px-0 lg:px-16 ">
                   {getRepos()}
-                </div>
+                </VerticalTimeline>
               )}
             </article>
           </main>

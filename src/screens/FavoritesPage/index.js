@@ -7,7 +7,7 @@ export default function FavoritesPage() {
 
   const getRepos = () => {
     return favorites.length ? favorites.map((repo) => (
-      <RepoCard repo={repo} id={repo.id} isFavoritesItem={false} />
+      <RepoCard repo={repo} key={repo.id} isFavoritesItem={false} />
     )) : <EmptyState title={'favorites'}/>;
   };
 

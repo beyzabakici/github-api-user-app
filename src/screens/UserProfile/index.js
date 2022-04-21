@@ -177,7 +177,7 @@ export default function UserProfile() {
                   </dl>
                 </div>
               ) : (
-                <VerticalTimeline className="flex flex-row flex-wrap justify-center mt-4 px-0 lg:px-16 ">
+                <VerticalTimeline className="flex flex-row flex-wrap justify-center mt-4 lg:px-16 ">
                   {getRepos()}
                 </VerticalTimeline>
               )}

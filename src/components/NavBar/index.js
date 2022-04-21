@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FAVORITES_PAGE, HOME_SCREEN } from "../../constants/navigations";
 
-export default function Navbar() {
+export default function NavBar() {
   const [menuVisible, setMenuVisibility] = useState(false);
   return (
     <header className="bg-gray-900">

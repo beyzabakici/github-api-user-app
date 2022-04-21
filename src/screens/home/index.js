@@ -1,22 +1,17 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Increment, Decrement } from "../../store/actions/counter.reducer";
-
-import "./style.css";
+import { UserCard } from "../../components";
+import useGetResults from "../../hooks/useGetResults";
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
-  const { counterReducer } = useSelector((state) => state);
-
-  const increment = () => dispatch(Increment());
-  const decrement = () => dispatch(Decrement());
-
+  const { data } = useGetResults("https://api.github.com/users");
+  const getUsers = () => {
+    return data.map((user) => <UserCard user={user} key={user.id}/>);
+  };
   return (
-    <div>
-      <h1>{counterReducer.val}</h1>
-
-      <button onClick={decrement}>DECREMENT</button>
-      <button onClick={increment}>INCREMENT</button>
-    </div>
+    <div className="mx-auto py-4 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-8">
+        <ul role="list" className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
+          {getUsers()} 
+        </ul>
+      </div>
   );
 };
 

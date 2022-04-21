@@ -1,2 +1,2 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+export const ADD_FAVORITES = "ADD_FAVORITES";
+export const REMOVE_FAVORITES = "REMOVE_FAVORITES";

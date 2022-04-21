@@ -1,157 +1,68 @@
-# Task Senaryosu
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Baslangic
+## Available Scripts
 
-- Projeyi forklayabilir / veya zipini indirip git dosyasını sildikten sonra kendi hesabınızda <b>private</b> repo olarak yükleyebilirsiniz.
-- proje ana dizininde asagidaki komutlari calistirin
+In the project directory, you can run:
 
-  ```sh
-  yarn install
-  ```
+### `npm start`
 
-  ```sh
-  yarn start
-  ```
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-</br>
-<b>Önemli Not:</b> Projenin zipini aldıysanız kendi projenize attığınız ilk commit projede hiçbir değişiklik yapılmamış hali olmalı.
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-</br></br>
+### `npm test`
 
-### 1. Görev Amacı
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Adayın aşağıdaki teknolojilere olan yetkinliğini gözlemlemek adına oluşturulmustur:
-  - React yetkinliği
-  - Styling bilgisi
-  - Git kullanımı
+### `npm run build`
 
-</br></br>
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### 2. Görev Tanımı
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-#### a. Git
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Görevde proje kullanılacak teknolojilerin kurulumunun sağlandığı kod adayın görevi onaylaması ile Github üzerinden iletilecektir. Bunun dışında aday kendi proje başlangıcını yapması da uygun görülmektedir. Örneğin proje Next.js altyapısı ile yapılabilir.
+### `npm run eject`
 
-- Aday paylaşılan görevin kodunu kullanmakta olduğu Github/Gitlab hesabında Private bir repository açarak kodun paylaşılmış ilk halini ‘First Commit’ olarak yüklemesi beklenmektedir.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- Projeye, ad ve soyadının baş harfleriyle branch açarak çalışmasını bu branch te yapması (örnek: Bill Gates -> BG-branch)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Görev bitirildiğinde
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-  1. Görevin branch e yüklenmesi
-  2. Branch in Master branch ine merge işleminin gerçekleştirilmesi
-  3. Görevin aşağıdaki hesaplar ile paylaşılması
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-  - Github ise
-    - baris-karan
-    - muhammeddeniz
-  - Gitlab ise
-    - bariskaran
-    - muhammeddeniz
+## Learn More
 
-  4. Görevin tamamlandığına dair cevap maili hazırlanması beklenmektedir.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Master branch ine merge işleminin yapıldığı ve atılan cevap mailinin tarihi dikkate alınacaktır.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-</br></br>
+### Code Splitting
 
-#### b. Görev
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-##### Görev tanımı:
+### Analyzing the Bundle Size
 
-1. İsmi girilen kullanıcının github profil bilgisi ve altinda sahip olduğu github repository lerinin listelenmesi beklenmektedir.
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-2. Profile bilgisi getirmek için kullanılabilecek servis:
+### Making a Progressive Web App
 
-GET:
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-```sh
-https://api.github.com/users/{githubUserName}
-```
+### Advanced Configuration
 
-<br/>
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-3. Profile ait repolari getirmek için kullanılabilecek servis:
+### Deployment
 
-GET:
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-```sh
-https://api.github.com/users/{githubUserName}/repos
-```
+### `npm run build` fails to minify
 
-<br/>
-
-##### Kullanıcının profil bilgisi olarak aşağıdaki bilgilerin gösterilmesi beklenmektedir
-
-- name
-- location
-- company
-- avatar_url
-- public_repos
-- followers
-- following
-
-<br/>
-
-##### İsmi girilen github kullanicisinin public repositorylerinin ‘created_at’ degerine gore listelenmesi
-
-<br/>
-
-##### Listelenen repository kart larinda bulunmasi gereken bilgiler
-
-1. Repository ismi
-2. Repository oluşturulma zamanı
-3. Repository url bilgisi
-
-- repository ismine koyularak tıklandığında url yönlenmesinin sağlanması
-
-4. Repository dili
-5. Favori butonu
-
-<br/>
-
-#### Her bir repository nin sağ üstünde yıldız ikonuna basıldığında favoriye eklenebilir olması
-
-- favoriye eklenmis bir repositoryde favoriye eklendigi icon olarak degismesi beklenmektedir.
-
-#### Favoriye eklenmiş repository nin yildiz icon una basıldığında favorilerden silinmesi
-
-- Favoriden çıkarılmış bir repository icon un başlangıç haline geri dönmesi beklenmektedir
-
-#### Sayfanın sağ üstünde bulunan favori repolar butonuna basıldığında
-
-- Favori olan kaydedilmiş repository lerin listelenmesi beklenmektedir.
-
-#### vercel deploy edilmesi
-
-- Bonus
-
-<br /><br />
-
-### 3. Görevde kullanılması uygun görülen teknolojiler
-
-- Redux ( setupi starterkit ile geliyor zaten )
-- Redux bağlantısı React Hooklar ile yapılması (orn: useSelector, useDispatch)
-- Stillendirme icin hazir kutuphane kullanılabilir (orn: chakraui, bootstrap, scss, css)
-- Axios HTTP service istekleri için kullanılabilir.
-- React router dom Sayfa yonlendirmeleri icin kullanilmali.
-- react-vertical-timeline-component ile zaman dilimine gore sortlanmasi (repolar listelenirken kullanilabilir)
-
-<br/></br>
-
-### 4. Kodlarken Nelere Dikkat Etmeli?
-
-- Functional component (onemli)
-- Clean Code
-- Commitlerin duzenli olmasi
-- İstenilen görevin fonksiyonelliğinin karşılanması.
-
-<br/></br>
-
-<b>BAŞARILAR...</b>
-</br>
-
-## License
-
-MIT © [DogGO](https://github.com/doggo-frontend)
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

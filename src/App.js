@@ -1,25 +1,32 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { NavBar } from "./components";
-import { HOME_SCREEN, STARED_REPOS_SCREEN } from "./constants/navigations";
-import { HomeScreen, StaredReposScreen } from "./screens";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { Navbar } from "./components";
+import {
+  FAVORITES_PAGE,
+  HOME_SCREEN,
+  NOT_FOUND_PAGE,
+  USER_PROFILE,
+} from "./constants/navigations";
+import {
+  FavoritesPage,
+  HomeScreen,
+  NotFoundPage,
+  UserProfile,
+} from "./screens";
 
 const App = () => {
+  const { pathname } = useLocation();
   return (
-    <Router>
-      <div>
-        <NavBar />
-
-        <Switch>
-          <Route exact path={`${STARED_REPOS_SCREEN}`}>
-            <StaredReposScreen />
-          </Route>
-
-          <Route exact path={`${HOME_SCREEN}`}>
-            <HomeScreen />
-          </Route>
-        </Switch>
+    <div className="app w-full">
+      <div className="container mx-auto px-4">
+        {pathname !== NOT_FOUND_PAGE && <Navbar />}
+        <Routes>
+          <Route path={HOME_SCREEN} element={<HomeScreen />} />
+          <Route path={USER_PROFILE} element={<UserProfile />} />
+          <Route path={FAVORITES_PAGE} element={<FavoritesPage />} />
+          <Route path={NOT_FOUND_PAGE} element={<NotFoundPage />} />
+        </Routes>
       </div>
-    </Router>
+    </div>
   );
 };
 

@@ -12,7 +12,7 @@ export default function RepoCard(props) {
   const dispatch = useDispatch();
   const { favorites } = useSelector((state) => state.mainReducer);
   const [isFavorite, setFavorite] = useState(false);
-  const { language, created_at, description, name, clone_url, id } = props.repo;
+  const { language, created_at, description, name, clone_url } = props.repo;
   const formatedDate = new Date(created_at).toLocaleString(undefined, {
     day: "numeric",
     month: "long",

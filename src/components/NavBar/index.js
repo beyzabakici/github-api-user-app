@@ -6,12 +6,8 @@ import debounce from "lodash.debounce";
 export default function NavBar() {
   const [menuVisible, setMenuVisibility] = useState(false);
   const [query, setQuery] = useSearchParams("");
-
-  const debouncedSearch = useCallback(
-    debounce((query) => setQuery(query), 500),
-    []
-  );
-
+  const debouncedSearch = useCallback(debounce((query) => query ? setQuery({'q': query}) : setQuery({}), 300), []);
+  
   return (
     <header className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8">

@@ -39,7 +39,7 @@ export default function RepoCard(props) {
           {name}
         </a>
         {description && (
-          <p className="mt-2 text-gray-400 text-base">{description}</p>
+          <p className="mt-2 text-gray-400 text-base break-words">{description}</p>
         )}
       </div>
       {language && (

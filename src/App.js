@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { NavBar } from "./components";
 import {
   FAVORITES_PAGE,
   HOME_SCREEN,
   NOT_FOUND_PAGE,
+  SEARCH_PARAMS,
   USER_PROFILE,
 } from "./constants/navigations";
 import {
@@ -15,8 +17,7 @@ import {
 } from "./screens";
 
 const App = () => {
-  const location = useLocation();
-
+  const location = useLocation(); 
   return (
     <div className="app w-full">
       <div className="container mx-auto px-4">

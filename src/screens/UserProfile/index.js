@@ -29,8 +29,7 @@ export default function UserProfile() {
   };
 
   const sortByDateRepos = () => {
-    repos.data.sort((a, b) => a.id - b.id);
-    return repos.data;
+    return repos.data.sort((a, b) => a.id - b.id);  
   }
 
   const getRepos = () => {

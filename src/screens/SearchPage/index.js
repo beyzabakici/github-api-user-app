@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { EmptyState, RepoCard } from "../../components";
 import useGetResults from "../../hooks/useGetResults";
 
 export default function SearchPage(props) {
-  const query = props.query?.slice(1, -1);
   const { data } = useGetResults(
-    `https://api.github.com/search/repositories?q=${query}`
+    `https://api.github.com/search/repositories?q=${props.query}`
   );
-
+  
   const getRepos = () => {
     return data.items?.length ? (
       data.items?.map((repo) => (

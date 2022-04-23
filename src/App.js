@@ -10,20 +10,31 @@ import {
   FavoritesPage,
   HomePage,
   NotFoundPage,
+  SearchPage,
   UserProfile,
 } from "./screens";
 
 const App = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
+
   return (
     <div className="app w-full">
       <div className="container mx-auto px-4">
-        {pathname !== NOT_FOUND_PAGE && <NavBar />}
+        {location.pathname !== NOT_FOUND_PAGE && <NavBar />}
         <Routes>
-          <Route path={HOME_SCREEN} element={<HomePage />} />
-          <Route path={USER_PROFILE} element={<UserProfile />} />
-          <Route path={FAVORITES_PAGE} element={<FavoritesPage />} />
-          <Route path={NOT_FOUND_PAGE} element={<NotFoundPage />} />
+          {!location.search.length ? (
+            <>
+              <Route path={HOME_SCREEN} element={<HomePage />} />
+              <Route path={USER_PROFILE} element={<UserProfile />} />
+              <Route path={FAVORITES_PAGE} element={<FavoritesPage />} />
+              <Route path={NOT_FOUND_PAGE} element={<NotFoundPage />} />
+            </>
+          ) : (
+            <Route
+              path={HOME_SCREEN}
+              element={<SearchPage query={location.search} />}
+            />
+          )}
         </Routes>
       </div>
     </div>

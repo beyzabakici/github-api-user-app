@@ -1,19 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FAVORITES_PAGE, HOME_SCREEN } from "../../constants/navigations";
 import debounce from "lodash.debounce";
 
 export default function NavBar() {
   const [menuVisible, setMenuVisibility] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useSearchParams("");
 
-  useEffect(() => {
-    debouncedSearch(query);
-  }, [query]);
-
-  const debouncedSearch = useCallback(debounce(query =>
-    console.log(query), 500), []
-  )
+  const debouncedSearch = useCallback(
+    debounce((query) => setQuery(query), 500),
+    []
+  );
 
   return (
     <header className="bg-gray-900">
@@ -22,7 +19,7 @@ export default function NavBar() {
           <div className="relative z-0 flex-1 px-2 flex items-center justify-center sm:absolute sm:inset-0">
             <div className="w-full sm:max-w-xs">
               <label htmlFor="search" className="sr-only">
-                Search
+                Search Repos
               </label>
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
@@ -44,9 +41,9 @@ export default function NavBar() {
                   id="search"
                   name="search"
                   className="block w-full bg-gray-700 border border-transparent rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-400 focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900 focus:placeholder-gray-500 sm:text-sm"
-                  placeholder="Search"
+                  placeholder="Search Repos"
                   type="search"
-                  onChange={(text) => setQuery(text.target.value)}
+                  onChange={(text) => debouncedSearch(text.target.value)}
                 />
               </div>
             </div>

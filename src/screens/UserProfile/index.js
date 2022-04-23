@@ -29,11 +29,17 @@ export default function UserProfile() {
     ));
   };
 
+  const sortByDateRepos = () => {
+    repos.data.sort((a, b) => a.id - b.id);
+    return repos.data;
+  }
+
   const getRepos = () => {
-    return repos.data.map((repo) => (
+    return sortByDateRepos().map((repo) => (
       <RepoCard repo={repo} isFavoritesItem={false} key={repo.id} />
     ));
   };
+
   return (
     <div className="user-profile flex bg-gray-900">
       <div className="flex flex-col min-w-0 flex-1 overflow-hidden">

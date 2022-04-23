@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Navbar } from "./components";
+import { NavBar } from "./components";
 import {
   FAVORITES_PAGE,
   HOME_SCREEN,
@@ -8,7 +8,7 @@ import {
 } from "./constants/navigations";
 import {
   FavoritesPage,
-  HomeScreen,
+  HomePage,
   NotFoundPage,
   UserProfile,
 } from "./screens";
@@ -18,9 +18,9 @@ const App = () => {
   return (
     <div className="app w-full">
       <div className="container mx-auto px-4">
-        {pathname !== NOT_FOUND_PAGE && <Navbar />}
+        {pathname !== NOT_FOUND_PAGE && <NavBar />}
         <Routes>
-          <Route path={HOME_SCREEN} element={<HomeScreen />} />
+          <Route path={HOME_SCREEN} element={<HomePage />} />
           <Route path={USER_PROFILE} element={<UserProfile />} />
           <Route path={FAVORITES_PAGE} element={<FavoritesPage />} />
           <Route path={NOT_FOUND_PAGE} element={<NotFoundPage />} />

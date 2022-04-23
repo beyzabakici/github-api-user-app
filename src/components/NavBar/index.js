@@ -2,16 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FAVORITES_PAGE, HOME_SCREEN } from "../../constants/navigations";
 
-export default function Navbar() {
+export default function NavBar() {
   const [menuVisible, setMenuVisibility] = useState(false);
   return (
     <header className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8">
         <div className="relative h-16 flex justify-end">
-          <div className="relative z-0 flex-1 px-2 flex items-center justify-center sm:absolute sm:inset-0">
-            
-          </div>
-          <div className="hidden md:block lg:flex items-center justify-end z-10">
+          <div className="relative z-0 flex-1 px-2 flex items-center justify-center sm:absolute sm:inset-0"></div>
+          <div className="hidden lg:block lg:flex items-center justify-end z-10">
             <Link
               to={HOME_SCREEN}
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md py-2 px-3 text-base font-medium"
@@ -69,7 +67,7 @@ export default function Navbar() {
         </div>
       </div>
       {menuVisible && (
-        <nav className="md:hidden" aria-label="Global" id="mobile-menu">
+        <nav className="" aria-label="Global" id="mobile-menu">
           <div className="pt-2 pb-3 px-2 space-y-1">
             <a
               href={HOME_SCREEN}

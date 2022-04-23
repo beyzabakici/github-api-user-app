@@ -32,9 +32,14 @@ export default function RepoCard(props) {
   const isFavoritesItem = () => {
     setFavorite(favorites.includes(props.repo));
   };
-
   return (
-    <VerticalTimelineElement time={created_at} className="mx-4 max-w-md w-1/2 py-4 px-8 bg-gray-800 shadow-lg rounded-lg my-4 ">
+    <VerticalTimelineElement
+      key={id}
+      date={formatedDate}
+      dateClassName="invisible"
+      intersectionObserverProps={{ rootMargin: "0px" }}
+      className="mx-4 max-w-md lg:w-1/2 w-4/5 py-4 px-8 bg-gray-800 shadow-lg rounded-lg my-4 "
+    >
       <p className="text-xs text-gray-400 mb-3">{formatedDate}</p>
       <div>
         <a className="text-gray-300 text-xl font-semibold" href={clone_url}>

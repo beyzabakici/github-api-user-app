@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { VerticalTimelineElement } from "react-vertical-timeline-component/dist-modules";
 import {
   addFavorites,
   removeFavorites,
@@ -33,13 +32,7 @@ export default function RepoCard(props) {
     setFavorite(favorites.includes(props.repo));
   };
   return (
-    <VerticalTimelineElement
-      key={id}
-      date={formatedDate}
-      dateClassName="invisible"
-      intersectionObserverProps={{ rootMargin: "0px" }}
-      className="mx-4 max-w-md lg:w-1/2 w-4/5 py-4 px-8 bg-gray-800 shadow-lg rounded-lg my-4 "
-    >
+    <div className="mx-4 max-w-md lg:w-1/2 w-4/5 py-4 px-8 bg-gray-800 shadow-lg rounded-lg my-4 ">
       <p className="text-xs text-gray-400 mb-3">{formatedDate}</p>
       <div>
         <a className="text-gray-300 text-xl font-semibold" href={clone_url}>
@@ -60,6 +53,6 @@ export default function RepoCard(props) {
           isFavoritesItem={isFavorite}
         />
       </div>
-    </VerticalTimelineElement>
+    </div>
   );
 }

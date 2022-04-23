@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { VerticalTimeline } from "react-vertical-timeline-component/dist-modules";
 import { OrganizationBadge, RepoCard } from "../../components";
 import useGetResults from "../../hooks/useGetResults";
 
@@ -29,11 +28,16 @@ export default function UserProfile() {
     ));
   };
 
+  const sortByDateRepos = () => {
+    return repos.data.sort((a, b) => a.id - b.id);  
+  }
+
   const getRepos = () => {
-    return repos.data.map((repo) => (
+    return sortByDateRepos().map((repo) => (
       <RepoCard repo={repo} isFavoritesItem={false} key={repo.id} />
     ));
   };
+
   return (
     <div className="user-profile flex bg-gray-900">
       <div className="flex flex-col min-w-0 flex-1 overflow-hidden">
@@ -177,9 +181,9 @@ export default function UserProfile() {
                   </dl>
                 </div>
               ) : (
-                <VerticalTimeline className="flex flex-row flex-wrap justify-center mt-4 lg:px-16 ">
+                <div className="flex flex-row flex-wrap justify-center mt-4 lg:px-16 ">
                   {getRepos()}
-                </VerticalTimeline>
+                </div>
               )}
             </article>
           </main>

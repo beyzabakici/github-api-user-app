@@ -1,7 +1,7 @@
 import { UserCard } from "../../components";
 import useGetResults from "../../hooks/useGetResults";
 
-const HomeScreen = () => {
+export default function HomePage ()  {
   const { data } = useGetResults("https://api.github.com/users");
   const getUsers = () => {
     return data.map((user) => <UserCard user={user} key={user.id}/>);
@@ -15,4 +15,3 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;

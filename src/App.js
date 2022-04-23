@@ -5,7 +5,6 @@ import {
   FAVORITES_PAGE,
   HOME_SCREEN,
   NOT_FOUND_PAGE,
-  SEARCH_PARAMS,
   USER_PROFILE,
 } from "./constants/navigations";
 import {

@@ -5,9 +5,16 @@ import useGetResults from "../../hooks/useGetResults";
 
 export default function UserProfile() {
   const { username } = useParams();
-  const { data } = useGetResults(`https://api.github.com/users/${username}`);
-  const orgs = useGetResults(`https://api.github.com/users/${username}/orgs`);
-  const repos = useGetResults(`https://api.github.com/users/${username}/repos`);
+  const [getResults, results] = useGetResults(
+    `https://api.github.com/users/${username}`
+  );
+  const [getRepo, repos] = useGetResults(
+    `https://api.github.com/users/${username}/repos`
+  );
+  const [getOrgs, orgs] = useGetResults(
+    `https://api.github.com/users/${username}/orgs`
+  );
+  console.log(results, repos, orgs);
   const [selectedRepos, setSelectedRepos] = useState(false);
   const {
     avatar_url,
@@ -20,17 +27,17 @@ export default function UserProfile() {
     location,
     public_repos,
     name,
-  } = data;
+  } = results.data;
 
   const getOrganizationBadges = () => {
-    return orgs.data.map((organization) => (
+    return orgs?.data.map((organization) => (
       <OrganizationBadge organization={organization} key={organization.id} />
     ));
   };
 
   const sortByDateRepos = () => {
-    return repos.data.sort((a, b) => a.id - b.id);  
-  }
+    return repos?.data.sort((a, b) => a.id - b.id);
+  };
 
   const getRepos = () => {
     return sortByDateRepos().map((repo) => (

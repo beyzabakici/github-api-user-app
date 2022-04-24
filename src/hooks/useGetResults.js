@@ -30,5 +30,5 @@ export default (domain) => {
     getResults();
   }, []);
 
-  return results;
+  return [getResults, results];
 };

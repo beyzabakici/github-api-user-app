@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { FAVORITES_PAGE, HOME_SCREEN } from "../../constants/navigations";
 import debounce from "lodash.debounce";
 
 export default function NavBar() {
   const [menuVisible, setMenuVisibility] = useState(false);
-  const [query, setQuery] = useSearchParams("");
-  const debouncedSearch = useCallback(debounce((query) => query ? setQuery({'q': query}) : setQuery({}), 300), []);
+  const [_, setQuery] = useSearchParams("");
+  const debouncedSearch = useCallback(debounce((query) => query ? setQuery({'q': query}) : setQuery({}), 500), []);
   
   return (
     <header className="bg-gray-900">

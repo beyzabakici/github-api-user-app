@@ -37,7 +37,7 @@ export default function NavBar() {
                   id="search"
                   name="search"
                   className="block w-full bg-gray-700 border border-transparent rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-400 focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900 focus:placeholder-gray-500 sm:text-sm"
-                  placeholder="Search Repos"
+                  placeholder="Search"
                   type="search"
                   onChange={(text) => debouncedSearch(text.target.value)}
                 />
